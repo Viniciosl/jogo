@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Futebol - Site Oficial</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        nav {
+            background-color: #0056b3;
+            padding: 10px;
+            text-align: center;
+        }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            background-color: #ddd;
+            flex-wrap: wrap;
+        }
+        .tab-button {
+            padding: 15px 20px;
+            cursor: pointer;
+            background-color: #ccc;
+            border: none;
+            outline: none;
+            transition: background-color 0.3s;
+        }
+        .tab-button.active {
+            background-color: #007bff;
+            color: white;
+        }
+        .tab-button:hover {
+            background-color: #007bff;
+            color: white;
+        }
+        .tab-content {
+            display: none;
+            padding: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .sponsors {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .sponsors img {
+            width: 150px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        video, iframe {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        label {
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+        select, input, button {
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .stat-item {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 768px) {
+            .tabs {
+                flex-direction: column;
+            }
+            .tab-button {
+                width: 100%;
+            }
+            .stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Jogo de Futebol: Time A vs. Time B</h1>
+        <p>Partida emocionante realizada ontem! Acompanhe todos os detalhes e participe da votação.</p>
+    </header>
+
+    <nav>
+        <p>Navegue pelas seções abaixo para mais informações sobre o jogo.</p>
+    </nav>
+
+    <div class="tabs">
+        <button class="tab-button active" onclick="openTab(0)">Introdução</button>
+        <button class="tab-button" onclick="openTab(1)">Patrocinadores e Vídeo</button>
+        <button class="tab-button" onclick="openTab(2)">Votação</button>
+    </div>
+
+    <div id="tab0" class="tab-content active">
+        <h2>Introdução do Jogo</h2>
+        <p>Ontem, o Time A enfrentou o Time B em uma partida intensa no Estádio Nacional. O jogo terminou com vitória do Time A por 2 a 1, com gols marcados por João Silva e Maria Santos. Foi uma disputa acirrada, com destaque para as defesas e ataques rápidos. A torcida lotou o estádio, tornando o evento inesquecível!</p>
+        <h3>Estatísticas da Partida</h3>
+        <div class="stats">
+            <div class="stat-item">
+                <h4>Placar Final</h4>
+                <p>Time A 2 - 1 Time B</p>
+            </div>
+            <div class="stat-item">
+                <h4>Gols</h4>
+                <p>Yuri Alberto (45'), Garro (78')</p>
+            </div>
+            <div class="stat-item">
+                <h4>Cartões Amarelos</h4>
+                <p>3 (Time A: 1, Time B: 2)</p>
+            </div>
+            <div class="stat-item">
+                <h4>Público</h4>
+                <p>50.000 espectadores</p>
+            </div>
+        </div>
+        <h3>Comentários dos Jogadores</h3>
+        <blockquote>"Foi uma vitória suada, mas merecida!" - João Silva, Capitão do Time A</blockquote>
+        <blockquote>"Jogamos com garra até o fim." - Pedro Lima, Goleiro do Time B</blockquote>
+    </div>
+
+    <div id="tab1" class="tab-content">
+        <h2>Patrocinadores e Vídeo</h2>
+        <p>Nossos patrocinadores tornaram este jogo possível. Veja alguns deles:</p>
+        <div class="sponsors">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASoAAACpCAMAAACrt4DfAAAAe1BMVEURERH///8AAAAODg4LCwsGBgbs7OzV1dWWlpbk5OQICAj6+vo2NjbExMS0tLSjo6MiIiJJSUlQUFAVFRWioqLz8/NxcXHf39/Z2dmqqqpBQUFra2tlZWXLy8uFhYU9PT18fHxMTEwoKChYWFiKioqwsLCamprGxsYvLy8Cbkz3AAACjElEQVR4nO3Zh5KCMBSFYXPBir3jWlh11fd/wuUidqzLzDLk/x4gY87kJDEUCgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgGTf9IWu19MfMAOmkm5UjIt1uL9Uxs0H6PSe1wTSmwrzhd4upDZkd0q9IOiNpTO70p+T125LLpAIjaSyqYpjTd6VszCgIA0thwMyRlfH/vKh0OdXnjYExptmRVJLPHll6pv6nsmhMMmyWwpjMoNKTlMqcOY6UTPXzyTnaulVrZCLjYU6bF5GG+bh/tTCmSWXm7XOKmpfuj8sUWYdzHH4wQ23dLog2p0gpx82LyESnuXh3q9LN6eunao7KuW6eciSabvuNWUabU7c/Nmeai7yeeSfi60y93qtRuXolWB83p7h5ku/mRfb1M2b5SlS6OS2DRslc0OblfUEpiWvUeboqdHOa+lVzJedn3olM4xk//geoV4LvTfk6pvC26VoSVBjVYZXcv4Lq5rRbb72bnMz4K+9n3pnjojImSMpKN6d2/H/lpnkTaxaUktlp6vXrievmtPJHSTHl/7Z5zW2fzd7rnj0v6c2pUykntE6VbWrenswvK1WXg/gxJZENt80bsr3u1dbfbPzGODGiuHmSy7fNJxy5u3Lu0OZZt6CUu3wvKMvOvHPSeSOnUqVgbVDRi/o7zbPszLvwclR65v33j/1fxfqrzbPwzLv0ygloe/MObu5VSc2z8nJw4/FmZelt8w79rPWgeSyoE/1YmsSz+LZ5T9G5eQEOF1Rgw1eFt9WkdZXTuk3zkjlSiN+lvMGsNRXuBg/o43l7MdlFD1Wsp2fcYtElJQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABnfgF1AxYyGda22QAAAABJRU5ErkJggg==" alt="Patrocinador 1">
+            <img src="data:image/png;base64,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" alt="Patrocinador 2">
+            <img src="data:image/png;base64,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" alt="Patrocinador 3">
+           
+        </div>
+        <p>Assista ao vídeo highlights da partida:</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/7DAWUgnupSI?si=qRpG6d9T1xmWLUnc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="30" height="10" src="https://www.youtube.com/embed/7DAWUgnupSI?si=qRpG6d9T1xmWLUnc" title="Hightlights JOGO" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p>Para mais vídeos, visite nosso canal no YouTube.</p>
+    </div>
+
+    <div id="tab2" class="tab-content">
+        <h2>Votação: Quem foi o Melhor Jogador?</h2>
+        <p>Escolha o jogador que você acha que foi o melhor da partida e vote! Sua opinião conta para as premiações futuras.</p>
+        <form id="voteForm">
+            <label for="player">Selecione o jogador:</label>
+            <select id="player" name="player" required>
+                <option value="">Escolha um jogador</option>
+                <option value="Yuri Alberto (Time A)">Yuri Alberto (Time A) - Marcou um gol incrível</option>
+                <option value="Garro (Time A)">Garro (Time A) - Assistiu o segundo gol</option>
+                <option value="Pedro Lima (Time B)">Pedro Lima (Time B) - Salvou várias defesas</option>
+                <option value="Ana Costa (Time B)">Ana Costa (Time B) - Tentou o empate até o fim</option>
+                <option value="Memphis Depay (Time A)">Memphis Depay (Time A) - Controle de bola excepcional</option>
+            </select>
+            <label for="email">Seu e-mail (opcional, para contato):</label>
+            <input type="email" id="email" name="email" placeholder="exemplo@email.com">
+            <button type="submit">Votar</button>
+        </form>
+        <div id="result"></div>
+        <p><em>Nota: Os votos são coletados anonimamente e não são salvos em um banco de dados real neste exemplo.</em></p>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Site do Jogo de Futebol. Todos os direitos reservados.</p>
+        <p>Contato: <a href="mailto:contato@jogodefutebol.com">contato@jogodefutebol.com</a> | Siga-nos no <a href="#" target="_blank">Instagram</a></p>
+    </footer>
+
+    <script>
+        function openTab(tabIndex) {
+            const tabs = document.querySelectorAll('.tab-content');
+            const buttons = document.querySelectorAll('.tab-button');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            buttons.forEach(button => button.classList.remove('active'));
+            tabs[tabIndex].classList.add('active');
+            buttons[tabIndex].classList.add('active');
+        }
+
+        document.getElementById('voteForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const selectedPlayer = document.getElementById('player').value;
+            const email = document.getElementById('email').value;
+            if (selectedPlayer) {
+                let message = `<p>Obrigado pelo seu voto! Você escolheu: <strong>${selectedPlayer}</strong></p>`;
+                if (email) {
+                    message += `<p>Seu e-mail (${email}) foi registrado para futuras comunicações.</p>`;
+                }
+                document.getElementById('result').innerHTML = message;
+            } else {
+                document.getElementById('result').innerHTML = '<p>Por favor, selecione um jogador.</p>';
+            }
+        });
+    </script>
+</body>
+</html>
